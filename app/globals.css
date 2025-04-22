@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  /* Темний режим */
+  --dark-mode: ['class'];
+
+
+  /* Розміри екранів */
+  --screen-xs: 475px;
+
+  /* Кольори */
+  --color-primary: #9B4DFF;
+  --color-secondary: #00FFFF;
+  --color-white: #F9FAFB;
+  --color-base: #D1D1D1;
+  --color-black: #1A1529;
+
+  /* Шрифти */
+  --font-roboto-sans: var(--font-roboto-sans);
+
+  /* Радіуси */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Тіні */
+  --drop-shadow: 0px 0px 5px rgba(0, 255, 255, 0.3);
+  --drop-shadow-purple: 0px 0px 10px #9333EA80
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    @apply font-roboto-sans text-[18px]
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply min-h-[100%] bg-linear-[130deg,#0F172A_0%,#151E37_40%,#1E1B4B_70%,#3B0764_100%]
+  }
+
+  .container {
+    @apply max-w-[1280px] xl:px-1.5 px-1
+  }
+
+  button, input, a {
+    @apply cursor-pointer
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .mainTitle {
+    @apply text-primary font-bold text-4xl drop-shadow
+  }
+
+  .subTitle {
+    @apply text-secondary font-medium text-2xl drop-shadow
+  }
+
+  .button {
+    @apply text-white font-medium py-2 px-4 
+           bg-[#331f5b] border-2 border-[#7C3AED] rounded-xl drop-shadow-purple transition-all;
+  }
+  
+  .button:hover {
+    @apply text-[#9B4DFF];
+    
+    box-shadow: 
+      0 0 10px rgba(124, 58, 237, 0.7),
+      0 0 15px rgba(124, 58, 237, 0.5) inset;
+    
+    border-color: #9B4DFF;
+  }
+
+  .button-select {
+    @apply text-white font-medium py-2 px-4 
+            border-2 border-[#00FFFF] rounded-xl drop-shadow-purple transition-all;
+  }
+
+  .button-select:hover {
+    @apply text-[#00FFFF];
+    
+    box-shadow:   
+      0 0 10px #00ffffc5,
+      0 0 15px #00ffff80 inset;
+  }
+
+  .button-select.active {
+    @apply text-black bg-linear-[120deg,#00FFFF_0%,#0099FF_100%]
+  }
+
+  .search {
+    @apply inline-flex gap-1 items-center py-2 px-4 text-white border-2 border-[#00FFFF] rounded-4xl max-w-xs w-full text-left transition-all
+  }
+
+  .search:hover {
+    @apply text-[#9B4DFF];
+    
+    box-shadow: 
+    0 0 10px #00ffffc5,
+    0 0 15px #00ffff80 inset;
+  }
+}
+
+.container {
+  max-width: 1200px;  
+  margin: 0 auto;         
+  padding: 0 1rem;       
+}
+
+
+.button.glow {
+  animation: pulse-neon 3s ease-in-out infinite;
+}
+
+@keyframes pulse-neon {
+  0% {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4),
+                0 0 20px rgba(124, 58, 237, 0.3) inset;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.7),
+                0 0 30px rgba(124, 58, 237, 0.5) inset;
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4),
+                0 0 20px rgba(124, 58, 237, 0.3) inset;
+  }
 }
