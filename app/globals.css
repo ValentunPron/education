@@ -15,6 +15,7 @@
   --color-white: #F9FAFB;
   --color-base: #D1D1D1;
   --color-black: #1A1529;
+  --color-header: #2C1E5050;
 
   /* Шрифти */
   --font-roboto-sans: var(--font-roboto-sans);
@@ -25,17 +26,17 @@
   --radius-sm: calc(var(--radius) - 4px);
 
   /* Тіні */
-  --drop-shadow: 0px 0px 5px rgba(0, 255, 255, 0.3);
+  --drop-shadow: 0px 0px 3px rgba(0, 255, 255, 0.3);
   --drop-shadow-purple: 0px 0px 10px #9333EA80
 }
 
 @layer base {
   * {
-    @apply font-roboto-sans text-[18px]
+    @apply font-roboto-sans text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] text-[#F9FAFB] 
   }
 
   body {
-    @apply min-h-[100%] bg-linear-[130deg,#0F172A_0%,#151E37_40%,#1E1B4B_70%,#3B0764_100%]
+    @apply min-h-screen bg-linear-[130deg,#0F172A_0%,#151E37_40%,#1E1B4B_70%,#3B0764_100%]
   }
 
   .container {
@@ -56,8 +57,12 @@
     @apply text-secondary font-medium text-2xl drop-shadow
   }
 
+  .linkButton {
+    @apply text-white font-medium text-xl drop-shadow 
+  }
+
   .button {
-    @apply text-white font-medium py-2 px-4 
+    @apply text-white font-medium py-1.5 px-3 md:py-2 md:px-4 
            bg-[#331f5b] border-2 border-[#7C3AED] rounded-xl drop-shadow-purple transition-all;
   }
   
