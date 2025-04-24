@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 
-const BurgerMenu = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: any}) => {
+const BurgerMenu = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
   
 
   return (
