@@ -22,7 +22,7 @@ export default async function Home({searchParams} : {searchParams: Promise<{quer
   return (
     <>
       <section className="section flex flex-col md:flex-row justify-center gap-5 items-center container">
-        <Image src={HeroImage} alt='hero' id='hero_image' className='max-w-[200px] rotate-12  md:max-w-sm w-full h-auto'/>
+        <Image src={HeroImage} alt='hero' id='hero_image' className='max-w-[250px] rotate-12  md:max-w-sm w-full h-auto'/>
         <div className='flex text-center md:text-left flex-col gap-2 max-w-lg'>
           <h1 className='mainTitle'>Навчись створювати IoT</h1>
           <h3 className='subTitle'>Курси від Університету ІФНТУНГ</h3>

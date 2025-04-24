@@ -31,7 +31,7 @@
 
 @layer base {
   * {
-    @apply font-roboto-sans text-[12px] lg:text-[16px] xl:text-[18px] text-[#F9FAFB]
+    @apply font-roboto-sans text-[14px] lg:text-[16px] xl:text-[18px] text-[#F9FAFB]
   }
 
   body {
