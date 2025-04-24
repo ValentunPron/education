@@ -14,7 +14,7 @@ const HeaderNav = () => {
     <header className='bg-header py-4 w-full shadow-xl'>
         <div className='container'>
           <nav className='flex justify-between '>
-            <Link href="/" className='flex text-center  max-w-[140px] sm:max-w-[180px] lg:max-w-[175px] xl:max-w-[200px]'>
+            <Link href="/" className='flex text-center  max-w-[120px] sm:max-w-[180px] lg:max-w-[175px] xl:max-w-[200px]'>
               <Image src={Logo} alt='logo' />
             </Link>
 
@@ -24,9 +24,9 @@ const HeaderNav = () => {
               <Link href='/about-us' className='linkButton'>Про нас</Link>
             </div>
 
-            <div className='flex gap-4'>
-              <Link href='/test' className='button'>Увійти</Link>
-              <Link href='/test' className='button'>Реєстрація</Link>
+            <div className='flex gap-2 md:gap-4 py-3'>
+              <Link href='/test' className='button header-button'>Увійти</Link>
+              <Link href='/test' className='button header-button'>Реєстрація</Link>
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
                 className="relavite z-11 md:hidden text-xl focus:outline-none"

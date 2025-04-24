@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoSans.variable} h-screen antialiased`}
+        className={`${robotoSans.variable} min-h-screen antialiased`}
       >
         <HeaderNav />
         {children}

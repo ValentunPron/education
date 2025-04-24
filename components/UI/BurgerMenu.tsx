@@ -4,6 +4,7 @@ import React from 'react'
 
 
 const BurgerMenu = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: any}) => {
+  
 
   return (
         <AnimatePresence>

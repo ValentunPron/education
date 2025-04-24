@@ -27,24 +27,28 @@
 
   /* Тіні */
   --drop-shadow: 0px 0px 3px rgba(0, 255, 255, 0.3);
-  --drop-shadow-purple: 0px 0px 10px #9333EA80
+  --drop-shadow-purple: 0px 0px 4px #9333EA80
 }
 
 @layer base {
   * {
-    @apply font-roboto-sans text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] text-[#F9FAFB] 
+    @apply font-roboto-sans text-[12px] lg:text-[16px] xl:text-[18px] text-[#F9FAFB]
   }
 
   body {
-    @apply min-h-screen bg-linear-[130deg,#0F172A_0%,#151E37_40%,#1E1B4B_70%,#3B0764_100%]
+    @apply h-full bg-linear-[130deg,#0F172A_0%,#151E37_40%,#1E1B4B_70%,#3B0764_100%] overflow-x-hidden pb-25
   }
 
   .container {
-    @apply max-w-[1280px] xl:px-1.5 px-1
+    @apply max-w-[1280px] xl:px-1.5 px-1 mx-auto overflow-hidden
   }
 
   button, input, a {
     @apply cursor-pointer
+  }
+
+  .section {
+    @apply py-6
   }
 }
 
@@ -57,12 +61,20 @@
     @apply text-secondary font-medium text-2xl drop-shadow
   }
 
+  .desc {
+    @apply text-base leading-[130%]
+  }
+
+  .courseTitle {
+    @apply text-xl
+  }
+
   .linkButton {
     @apply text-white font-medium text-xl drop-shadow 
   }
 
   .button {
-    @apply text-white font-medium py-1.5 px-3 md:py-2 md:px-4 
+    @apply text-white font-medium text-xl py-2 px-3  md:px-4 text-center
            bg-[#331f5b] border-2 border-[#7C3AED] rounded-xl drop-shadow-purple transition-all;
   }
   
@@ -77,7 +89,7 @@
   }
 
   .button-select {
-    @apply text-white font-medium py-2 px-4 
+    @apply text-white font-medium py-2 px-5
             border-2 border-[#00FFFF] rounded-xl drop-shadow-purple transition-all;
   }
 
@@ -93,6 +105,10 @@
     @apply text-black bg-linear-[120deg,#00FFFF_0%,#0099FF_100%]
   }
 
+  .header-button {
+    @apply text-sm md:text-xl
+  }
+
   .search {
     @apply inline-flex gap-1 items-center py-2 px-4 text-white border-2 border-[#00FFFF] rounded-4xl max-w-xs w-full text-left transition-all
   }
@@ -104,12 +120,16 @@
     0 0 10px #00ffffc5,
     0 0 15px #00ffff80 inset;
   }
+
+  .course-card {
+    @apply border-2 border-[#9B4DFF] bg-linear-[130deg,#1A1529_0%,#3D2C58_100%] rounded-2xl min-h-[200px] max-w-[350px] sm:max-w-[275px] 
+  }
 }
 
 .container {
-  max-width: 1200px;  
+  max-width: 1240px;  
   margin: 0 auto;         
-  padding: 0 1rem;       
+  padding-left: 1rem; padding-right: 1rem;       
 }
 
 

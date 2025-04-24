@@ -12,7 +12,6 @@ const SearchFormReset = () => {
         }
     }
     
-
   return (
     <button type='reset' onClick={reset}>
         <Link href="/">
