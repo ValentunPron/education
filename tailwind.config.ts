@@ -1,24 +1,27 @@
-  
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-      './app/**/*.{js,ts,jsx,tsx}',
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}',
-    ],
-    theme: {
-      extend: {
-        colors: {
-          primary: '#2563eb', // кастомний синій
-          secondary: '#f43f5e', // рожевий
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        fontFamily: {
-          sans: ['Roboto', 'sans-serif'],
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
-    corePlugins: {
-      preflight: false,
-    },
-    plugins: [],
-  };
+  },
+  plugins: [],
+};

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   /* Темний режим */
   --dark-mode: ['class'];
@@ -77,6 +76,10 @@
     @apply text-white font-medium text-xl py-2 px-3  md:px-4 text-center
            bg-[#331f5b] border-2 border-[#7C3AED] rounded-xl drop-shadow-purple transition-all;
   }
+
+  .buttonBite {
+    @apply mt-5 max-w-55 w-full mx-auto md:mx-0 text-center
+  }
   
   .button:hover {
     @apply text-[#9B4DFF];
@@ -110,7 +113,7 @@
   }
 
   .search {
-    @apply inline-flex gap-1 items-center py-2 px-4 text-white border-2 border-[#00FFFF] rounded-4xl max-w-xs w-full text-left transition-all
+    @apply inline-flex gap-1 items-center py-2 px-4 text-white border-2 border-[#00FFFF] rounded-4xl max-w-lg w-full text-left transition-all
   }
 
   .search:hover {
@@ -150,4 +153,32 @@
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.4),
                 0 0 20px rgba(124, 58, 237, 0.3) inset;
   }
+}
+
+.AccordionContent {
+	overflow: hidden;
+}
+.AccordionContent[data-state="open"] {
+	animation: slideDown 300ms ease-out;
+}
+.AccordionContent[data-state="closed"] {
+	animation: slideUp 300ms ease-out;
+}
+
+@keyframes slideDown {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
 }
